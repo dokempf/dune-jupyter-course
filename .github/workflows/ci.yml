@@ -1,0 +1,39 @@
+name: notebook-testing
+
+on:
+  # We run CI on pushes to the master branch
+  push:
+    branches:
+      - master
+  # as well as one pushes to PRs targeting the master branch
+  pull_request:
+    branches:
+      - master
+  # as well as upon manual triggers through the 'Actions' tab of the Github UI
+  workflow_dispatch:
+
+jobs:
+  notebook-testing:
+    name: Testing contained notebooks
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checking out dune-jupyter-course repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+
+    - name: Setting up Anaconda
+      uses: s-weigand/setup-conda@v1
+
+    - name: Install xeus-cling
+      run: |
+        conda install xeus-cling jupyter -c conda-forge
+
+    - name: Building the jupyter kernel and installing it
+      run: |
+        ./bin/build.sh
+
+    - name: Run Pytest to check that all Jupyter notebooks can be reproduced
+      run: |
+        ./bin/runtests.sh
