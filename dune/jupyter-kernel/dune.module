@@ -1,0 +1,12 @@
+################################
+# Dune module information file #
+################################
+
+# Name of the module
+Module: jupyter-kernel
+Version: 0.1
+Maintainer: dominic.kempf@iwr.uni-heidelberg.de
+# Required build dependencies
+Depends: dune-grid
+# Optional build dependencies
+#Suggests:

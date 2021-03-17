@@ -1,0 +1,12 @@
+[submodule "dune/dune-common"]
+	path = dune/dune-common
+	url = https://gitlab.dune-project.org/core/dune-common.git
+[submodule "dune/dune-grid"]
+	path = dune/dune-grid
+	url = https://gitlab.dune-project.org/core/dune-grid.git
+[submodule "dune/dune-geometry"]
+	path = dune/dune-geometry
+	url = https://gitlab.dune-project.org/core/dune-geometry.git
+[submodule "dune/jupyter-kernel/xeus-cling-cmake-setup"]
+	path = dune/jupyter-kernel/xeus-cling-cmake-setup
+	url = https://github.com/dokempf/xeus-cling-cmake-setup.git
