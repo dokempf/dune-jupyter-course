@@ -20,8 +20,26 @@ dune_project()
 
 add_subdirectory(xeus-cling-cmake-setup)
 
+# Fiddle out potential library dirs. This will all vanish with our new
+# target-based build system - hopefully!
+set(libdirs)
+set(incdirs)
+foreach(mod ${ALL_DEPENDENCIES})
+  if(EXISTS ${${mod}_DIR})
+    set(libdirs ${libdirs} ${${mod}_DIR}/lib)
+  endif()
+  if(EXISTS ${${mod}_INCLUDE_DIRS})
+    set(incdirs ${incdirs} ${${mod}_INCLUDE_DIRS})
+  endif()
+endforeach()
+
 xeus_cling_setup(
+  INCLUDE_DIRECTORIES ${incdirs}
   LINK_LIBRARIES ${DUNE_LIBS}
+  LIBRARY_DIRECTORIES ${libdirs}
+  SETUP_HEADERS ${CMAKE_BINARY_DIR}/config.h
+  KERNEL_NAME "C++17 (DUNE)"
+  REQUIRED
 )
 
 # finalize the dune project, e.g. generating config.h etc.
