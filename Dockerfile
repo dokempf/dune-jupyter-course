@@ -17,14 +17,9 @@ RUN apt update && \
 USER ${NB_USER}
 
 # Install conda and its dependencies
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh && \
-    chmod +x Anaconda3-2020.11-Linux-x86_64.sh && \
-    ./Anaconda3-2020.11-Linux-x86_64.sh -b && \
-    rm Anaconda3-2020.11-Linux-x86_64.sh
-
-RUN conda init
-RUN conda update --all
-RUN conda install xeus-cling cxxopts -c conda-forge
+RUN conda update --all && \
+    conda install xeus-cling cxxopts -c conda-forge && \
+    conda clean -a -q -y
 
 # Copying the repository into the Docker container
 COPY --chown=${NB_UID} . ${HOME}
