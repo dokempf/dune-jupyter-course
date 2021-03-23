@@ -5,7 +5,6 @@ FROM jupyter/scipy-notebook:9fe5186aba96
 # Install Dune dependencies
 USER root
 RUN apt update && \
-    apt upgrade -yy && \
     apt install -yy \
         build-essential \
         cmake \
@@ -14,7 +13,9 @@ RUN apt update && \
         libsuitesparse-dev \
         libsuperlu-dev \
         libopenmpi-dev \
-        openmpi-bin
+        openmpi-bin && \
+    rm -rf /var/lib/apt/lists/*
+
 USER ${NB_USER}
 
 # Install conda and its dependencies
