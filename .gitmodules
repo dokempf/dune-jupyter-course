@@ -10,3 +10,24 @@
 [submodule "dune/jupyter-kernel/xeus-cling-cmake-setup"]
 	path = dune/jupyter-kernel/xeus-cling-cmake-setup
 	url = https://github.com/dokempf/xeus-cling-cmake-setup.git
+[submodule "dune/dune-localfunctions"]
+	path = dune/dune-localfunctions
+	url = https://gitlab.dune-project.org/core/dune-localfunctions.git
+[submodule "dune/dune-istl"]
+	path = dune/dune-istl
+	url = https://gitlab.dune-project.org/core/dune-istl.git
+[submodule "dune/dune-typetree"]
+	path = dune/dune-typetree
+	url = https://gitlab.dune-project.org/staging/dune-typetree.git
+[submodule "dune/dune-functions"]
+	path = dune/dune-functions
+	url = https://gitlab.dune-project.org/staging/dune-functions.git
+[submodule "dune/dune-uggrid"]
+	path = dune/dune-uggrid
+	url = https://gitlab.dune-project.org/staging/dune-uggrid.git
+[submodule "dune/dune-alugrid"]
+	path = dune/dune-alugrid
+	url = https://gitlab.dune-project.org/extensions/dune-alugrid.git
+[submodule "dune/dune-pdelab"]
+	path = dune/dune-pdelab
+	url = https://gitlab.dune-project.org/pdelab/dune-pdelab.git

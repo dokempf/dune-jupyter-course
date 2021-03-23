@@ -7,6 +7,6 @@ Module: jupyter-kernel
 Version: 0.1
 Maintainer: dominic.kempf@iwr.uni-heidelberg.de
 # Required build dependencies
-Depends: dune-grid
+Depends: dune-pdelab
 # Optional build dependencies
 #Suggests:
