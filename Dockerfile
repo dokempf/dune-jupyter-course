@@ -10,6 +10,7 @@ RUN apt update && \
         build-essential \
         cmake \
         git \
+        gnuplot \
         libsuitesparse-dev \
         libsuperlu-dev \
         libopenmpi-dev \
