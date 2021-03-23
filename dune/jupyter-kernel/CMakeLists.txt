@@ -34,10 +34,11 @@ foreach(mod ${ALL_DEPENDENCIES})
 endforeach()
 
 xeus_cling_setup(
-  INCLUDE_DIRECTORIES ${incdirs}
+  INCLUDE_DIRECTORIES ${incdirs} ${CMAKE_SOURCE_DIR}
   LINK_LIBRARIES ${DUNE_LIBS}
   LIBRARY_DIRECTORIES ${libdirs}
-  SETUP_HEADERS ${CMAKE_BINARY_DIR}/config.h
+  SETUP_HEADERS
+    ${CMAKE_BINARY_DIR}/config.h
   KERNEL_NAME "C++17 (DUNE)"
   REQUIRED
 )
