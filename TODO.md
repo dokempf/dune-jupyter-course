@@ -3,4 +3,3 @@
 * Add a concept check around the grid print so that it only prints grids
 * Check dim == 2 before doing Dune::printgrid
 * Check exercise extension
-  
