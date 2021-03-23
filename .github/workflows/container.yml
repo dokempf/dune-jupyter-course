@@ -13,9 +13,11 @@ jobs:
 
     - name: checkout files in repo
       uses: actions/checkout@master
+      with:
+        submodules: 'recursive'
 
     - name: update jupyter dependencies with repo2docker
-      uses: machine-learning-apps/repo2docker-action@master
+      uses: jupyterhub/repo2docker-action@master
       with:
         NO_PUSH: true
         MYBINDERORG_TAG: master
