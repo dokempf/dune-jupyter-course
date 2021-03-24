@@ -3,6 +3,4 @@
 * Add a concept check around the grid print so that it only prints grids
 * Check dim == 2 before doing Dune::printgrid
 * Check exercise extension
-* Make sure that the patch correctly applies in the docker build
 * Remove output from all cells in pre commit hook
-
