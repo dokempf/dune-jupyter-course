@@ -1,0 +1,7 @@
+# Available repos: https://pre-commit.com/hooks.html
+repos:
+-   repo: https://github.com/kynan/nbstripout
+    rev: 0.3.9
+    hooks:
+    -   id: nbstripout
+        files: ".ipynb"

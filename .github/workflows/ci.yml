@@ -33,7 +33,3 @@ jobs:
     - name: Building the jupyter kernel and installing it
       run: |
         ./bin/build.sh
-
-    - name: Run Pytest to check that all Jupyter notebooks can be reproduced
-      run: |
-        ./bin/runtests.sh
