@@ -20,7 +20,7 @@ USER ${NB_USER}
 
 # Install conda and its dependencies
 RUN conda update --all && \
-    conda install xeus-cling cxxopts -c conda-forge && \
+    conda install xeus-cling cxxopts fortran-compiler -c conda-forge && \
     conda clean -a -q -y
 
 # Copying the repository into the Docker container
