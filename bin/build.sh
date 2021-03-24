@@ -2,10 +2,9 @@
 
 # Patch dune-geometry
 pushd dune/dune-geometry
-if [ ! -f "remove_std_call_once.patch" ]; then
-    cp ../../patches/remove_std_call_once.patch .
-    git apply remove_std_call_once.patch
-fi
+cp ../../patches/remove_std_call_once.patch .
+git stash
+git apply remove_std_call_once.patch
 popd
 
 # Build using dunecontrol
