@@ -1,5 +1,0 @@
-CMAKE_FLAGS="
-  -DCMAKE_C_COMPILER=$(which gcc)
-  -DCMAKE_CXX_COMPILER=$(which g++)
-  -DBUILD_SHARED_LIBS=ON
-"

@@ -32,4 +32,4 @@ jobs:
 
     - name: Building the jupyter kernel and installing it
       run: |
-        ./bin/build.sh
+        ./bin/build-local.sh

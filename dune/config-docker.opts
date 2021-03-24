@@ -1,0 +1,5 @@
+CMAKE_FLAGS="
+  -DCMAKE_C_COMPILER=/opt/conda/bin/x86_64-conda-linux-gnu-gcc
+  -DCMAKE_CXX_COMPILER=/opt/conda/bin/x86_64-conda-linux-gnu-g++
+  -DBUILD_SHARED_LIBS=ON
+"
