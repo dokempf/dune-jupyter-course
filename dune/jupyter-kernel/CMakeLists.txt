@@ -39,6 +39,8 @@ xeus_cling_setup(
   LIBRARY_DIRECTORIES ${libdirs}
   SETUP_HEADERS
     ${CMAKE_BINARY_DIR}/config.h
+  DOXYGEN_URLS https://dune-project.org/doxygen/2.7.1
+  DOXYGEN_TAGFILES "Dune Core Modules.tag"
   KERNEL_NAME "C++17 (DUNE)"
   REQUIRED
 )
