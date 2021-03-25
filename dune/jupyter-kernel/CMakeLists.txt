@@ -37,6 +37,9 @@ xeus_cling_setup(
   INCLUDE_DIRECTORIES ${incdirs} ${CMAKE_SOURCE_DIR}
   LINK_LIBRARIES ${DUNE_LIBS}
   LIBRARY_DIRECTORIES ${libdirs}
+  COMPILE_FLAGS
+    -DENABLE_UG=1
+    -DUG_USE_NEW_DIMENSION_DEFINES
   SETUP_HEADERS
     ${CMAKE_BINARY_DIR}/config.h
   DOXYGEN_URLS https://dune-project.org/doxygen/2.7.1

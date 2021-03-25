@@ -3,6 +3,7 @@
 
 /** Convenience header including all of dune-grid */
 
+#include<dune/grid/uggrid.hh>
 #include<dune/grid/yaspgrid.hh>
 #include<dune/grid/io/file/printgrid.hh>
 
