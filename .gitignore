@@ -3,3 +3,4 @@ build
 .pytest_cache
 *.gnuplot
 *.png
+*.vtu
