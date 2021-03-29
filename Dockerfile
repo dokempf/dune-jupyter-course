@@ -11,6 +11,7 @@ RUN conda update --all && \
         gcc_linux-64 \
         gnuplot \
         suitesparse \
+        superlu \
         xeus-cling && \
     conda clean -a -q -y
 
