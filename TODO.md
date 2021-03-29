@@ -15,4 +15,6 @@ Dune/Jupyter integration stuff
 
 Jupyter Stuff:
 * Check exercise extension
-* Check why precommit hook sometime fails
+
+Tutorial Porting:
+* Finish Tutorial 00 with descriptive text
