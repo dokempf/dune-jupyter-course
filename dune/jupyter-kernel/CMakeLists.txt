@@ -42,8 +42,8 @@ xeus_cling_setup(
     -DUG_USE_NEW_DIMENSION_DEFINES
   SETUP_HEADERS
     ${CMAKE_BINARY_DIR}/config.h
-  DOXYGEN_URLS https://dune-project.org/doxygen/2.7.1
-  DOXYGEN_TAGFILES "Dune Core Modules.tag"
+  DOXYGEN_URLS https://dune-project.org/doxygen/pdelab/master
+  DOXYGEN_TAGFILES "DUNE PDELab.tag"
   KERNEL_NAME "C++17 (DUNE)"
   REQUIRED
 )
