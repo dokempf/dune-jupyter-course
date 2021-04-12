@@ -3,8 +3,7 @@
 FROM jupyter/scipy-notebook:9fe5186aba96
 
 # Install conda and its dependencies
-RUN conda update --all && \
-    conda install -c conda-forge \
+RUN conda install -c conda-forge \
         cmake \
         cxxopts \
         fortran-compiler \
