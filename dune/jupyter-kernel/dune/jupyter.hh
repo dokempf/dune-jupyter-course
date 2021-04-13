@@ -12,5 +12,6 @@
 // Include jupyter extension headers
 #include<dune/jupyter-kernel/printgrid.hh>
 #include<dune/jupyter-kernel/parametertree.hh>
+#include<dune/jupyter-kernel/vtkwriter.hh>
 
 #endif
