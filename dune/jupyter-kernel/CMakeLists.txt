@@ -18,6 +18,8 @@ include(DuneMacros)
 # start a dune project with information from dune.module
 dune_project()
 
+add_subdirectory(dune)
+
 add_subdirectory(xeus-cling-cmake-setup)
 
 # Fiddle out potential library dirs. This will all vanish with our new
