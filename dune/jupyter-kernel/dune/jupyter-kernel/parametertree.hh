@@ -2,7 +2,6 @@
 #define DUNE_JUPYTER_KERNEL_PARAMETERTREE_HH
 
 #include<dune/common/parametertree.hh>
-#include<dune/grid/io/file/printgrid.hh>
 #include<nlohmann/json.hpp>
 
 // We inject this into the Dune namespace to enable ADL
