@@ -1,6 +1,5 @@
 CMAKE_FLAGS="
   -DCMAKE_C_COMPILER=$CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc
   -DCMAKE_CXX_COMPILER=$CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++
-  -DCMAKE_DISABLE_FIND_PACKAGE_dune-alugrid=1
   -DBUILD_SHARED_LIBS=ON
 "

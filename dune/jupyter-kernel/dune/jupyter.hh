@@ -7,6 +7,7 @@
 #include<dune/common.hh>
 #include<dune/geometry.hh>
 #include<dune/grid.hh>
+#include<dune/alugrid/grid.hh>
 #include<dune/pdelab.hh>
 
 // Include jupyter extension headers
