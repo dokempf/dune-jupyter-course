@@ -33,3 +33,6 @@ COPY --chown=${NB_UID} . ${HOME}
 
 # Build the Dune kernel
 RUN ./bin/build-docker.sh
+
+# We enable JupyerLab!
+ENV JUPYTER_ENABLE_LAB=yes
