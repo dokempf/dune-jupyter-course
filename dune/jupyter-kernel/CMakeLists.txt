@@ -46,6 +46,7 @@ xeus_cling_setup(
     ${CMAKE_BINARY_DIR}/config.h
   DOXYGEN_URLS https://dune-project.org/doxygen/pdelab/master
   DOXYGEN_TAGFILES "DUNE PDELab.tag"
+  KERNEL_LOGO_FILES logo-32x32.png logo-64x64.png
   KERNEL_NAME "C++17 (DUNE)"
   REQUIRED
 )
