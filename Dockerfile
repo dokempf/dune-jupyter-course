@@ -41,4 +41,5 @@ WORKDIR ${HOME}
 # If this image is used from JupyterHub, the below script needs to
 # be called on container startup to initialize the user's persistent
 # storage with the correct content.
-RUN /opt/dune/bin/copy-notebooks.sh
+COPY --chown=${NB_UID} ./bin/populate-home.sh /opt
+RUN /opt/populate-home.sh
