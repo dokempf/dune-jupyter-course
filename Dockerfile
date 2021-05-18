@@ -13,6 +13,7 @@ RUN apt update && \
       libgl1-mesa-glx && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /opt/dune && chown -R ${NB_USER} /opt/dune
 USER ${NB_USER}
 
 # Install conda and its dependencies
@@ -29,7 +30,16 @@ RUN conda install -c conda-forge \
     conda clean -a -q -y
 
 # Copying the repository into the Docker container
-COPY --chown=${NB_UID} . ${HOME}
+COPY --chown=${NB_UID} . /opt/dune
 
 # Build the Dune kernel
+WORKDIR /opt/dune
 RUN ./bin/build-docker.sh
+WORKDIR ${HOME}
+
+# Populate the home directory with our notebooks.
+# If this image is used from JupyterHub, the below script needs to
+# be called on container startup to initialize the user's persistent
+# storage with the correct content.
+COPY --chown=${NB_UID} ./bin/populate-home.sh /opt
+RUN /opt/populate-home.sh
