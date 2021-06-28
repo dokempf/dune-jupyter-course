@@ -14,5 +14,6 @@
 #include<dune/jupyter-kernel/printgrid.hh>
 #include<dune/jupyter-kernel/parametertree.hh>
 #include<dune/jupyter-kernel/vtkwriter.hh>
+#include<dune/jupyter-kernel/printrefelem.hh>
 
 #endif
