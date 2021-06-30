@@ -1,9 +1,10 @@
 name: Build Container for mybinder.org
 
 on:
-  push:
-    branches:
-      - master
+  # Until this repo is in production, we omit the automatic trigger on Binder
+  # push:
+  #   branches:
+  #     - master
   workflow_dispatch:
 
 jobs:
