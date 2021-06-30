@@ -38,4 +38,4 @@ RUN ./bin/build-docker.sh
 WORKDIR ${HOME}
 
 # Populate the home directory with our notebooks.
-RUN cp -r /opt/dune/notebooks ${HOME}
+RUN cp -r /opt/dune/notebooks/* ${HOME}
