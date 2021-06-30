@@ -20,3 +20,13 @@ pre-commit install
 ```
 
 It will make sure that the notebook outputs do not end up in the repository erroneously.
+
+### Extensions
+
+The notebooks use the unofficial jupyter notebook extensions, an installation guide can be found [here](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html).
+Currently, the following extensions are in use:
+ - Collapsible Headings
+ - Equation Auto Numbering
+ - Exercise2
+ - Table of Contents (2)
+ - Rubberband (required by Exercise2)
