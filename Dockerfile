@@ -38,8 +38,4 @@ RUN ./bin/build-docker.sh
 WORKDIR ${HOME}
 
 # Populate the home directory with our notebooks.
-# If this image is used from JupyterHub, the below script needs to
-# be called on container startup to initialize the user's persistent
-# storage with the correct content.
-COPY --chown=${NB_UID} ./bin/populate-home.sh /opt
-RUN /opt/populate-home.sh
+RUN cp -r /opt/notebooks ${HOME}
