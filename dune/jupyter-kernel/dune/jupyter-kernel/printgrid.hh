@@ -10,9 +10,16 @@
 namespace Dune {
 
   // TODO: Add a concept check for a Dune grid
- /* template<typename Grid>
+  template<typename Grid>
   nlohmann::json mime_bundle_repr(const std::unique_ptr<Grid>& grid)
   {
+    //check for grid dimension
+    const int dim = Grid::dimension;
+    if(dim > 2){
+      auto bundle = nlohmann::json::object();
+      bundle["text/plain"] = "Visualization is only available for 2D grids.";
+      return bundle;
+    }
     // Write out the PNG file using Dune functionality
     int argc;
     char** argv;
@@ -30,8 +37,8 @@ namespace Dune {
     bundle["image/png"] = xtl::base64encode(buffer.str());
     return bundle;
   }
-  */
 
+/*
   template<int dim, typename T, typename U, template<int,typename> typename Grid>
   nlohmann::json mime_bundle_repr(const std::unique_ptr<Grid<dim,T>, U > & grid)
   {
@@ -61,10 +68,10 @@ namespace Dune {
       bundle["text/html"] = "Visualization is only available for 2D grids.";
       return bundle;
   }
+*/
 
-
-  //the function grid() of a gridview returns a reference to a grid
-  template<int dim, typename T, template<int,typename> typename Grid>
+  //the function grid() of a gridview returns a reference to a grid, but this should be done using concepts
+  /*template<int dim, typename T, template<int,typename> typename Grid>
   nlohmann::json mime_bundle_repr(const Grid<dim,T>& grid)
   {
     // Write out the PNG file using Dune functionality
@@ -100,6 +107,7 @@ namespace Dune {
       const auto& grid = gridview.grid();
       return mime_bundle_repr(grid);
   }
+  */
 }
 
 #endif // DUNE_JUPYTER_KERNEL_PRINTGRID_HH
