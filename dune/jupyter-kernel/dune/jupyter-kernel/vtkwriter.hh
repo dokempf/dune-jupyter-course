@@ -10,16 +10,16 @@ namespace Dune {
   template<typename GV>
   nlohmann::json mime_bundle_repr(Dune::VTKWriter<GV>& vtkwriter)
   {
-    //read name from temporary file
+    //read name from temporary file             // this can be created using a magic command "%%file filename" in a cell, rest of cell content is then written in this file
     std::string outputname;
-    std::ifstream myfile("name.txt");
+    std::ifstream myfile("name.txt");           // so in order for this to work the magic command "%%file name.txt" is necessary, followed by the prefered output name
     if (myfile.is_open())
     {
       std::getline(myfile,outputname);
       myfile.close();
     }
     else
-      outputname = "output";
+      outputname = "output";                    // if no magic command is provided, it still works as before
 
     // Write out the VTK file into a temporary file
     vtkwriter.write(outputname, Dune::VTK::appendedraw);
