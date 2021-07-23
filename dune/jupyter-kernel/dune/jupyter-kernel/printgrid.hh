@@ -15,7 +15,16 @@ namespace Dune {
   {
     //check for grid dimension
     const int dim = Grid::dimension;
+
     if constexpr (dim == 2){
+      //only print grids with not to many elements
+      std::array<int,2> gridsize = grid->globalSize();
+      if (gridsize[0] > 30 || gridsize[1] > 30){
+        auto bundle = nlohmann::json::object();
+        bundle["text/plain"] = "Grid is to large for visualization.";
+        return bundle;
+      }
+
       // Write out the PNG file using Dune functionality
       int argc;
       char** argv;
@@ -37,7 +46,6 @@ namespace Dune {
     auto bundle = nlohmann::json::object();
     bundle["text/plain"] = "Visualization is only available for 2D grids.";
     return bundle;
-
   }
 }
 
