@@ -182,7 +182,18 @@ public:
   void alpha_boundary (const IG& ig, const LFSU& lfsu, const X& x,
                      const LFSV& lfsv, R& r) const
   {
-    // Add your code here
+     // Add your code here, see below for creation of transformation!
+
+     //   // geometry of inside cell
+     //   auto geo_inside = ig.inside().geometry();
+
+     //   // loop over quadrature points
+     //   for (const auto& ip : rule)
+     //     {
+
+     //       // transform gradients of shape functions to real element
+     //       const auto S = geo_inside.jacobianInverseTransposed(local);
+     //     }
     
   }
 
