@@ -16,4 +16,7 @@
 #include<dune/jupyter-kernel/vtkwriter.hh>
 #include<dune/jupyter-kernel/printrefelem.hh>
 
+// Include additional c++ headers
+#include <filesystem>
+
 #endif
