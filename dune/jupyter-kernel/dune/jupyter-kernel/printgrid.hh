@@ -13,24 +13,40 @@ namespace Dune {
   template<typename Grid>
   nlohmann::json mime_bundle_repr(const std::unique_ptr<Grid>& grid)
   {
-    // Write out the PNG file using Dune functionality
-    int argc;
-    char** argv;
-    const auto& helper = Dune::MPIHelper::instance(argc, argv);
-    Dune::printGrid(*grid, helper, "gridexercise");
+    //check for grid dimension
+    const int dim = Grid::dimension;
 
-    // Read it back into a string buffer
-    std::ifstream fin("gridexercise_0.png", std::ios::binary);
-    std::stringstream buffer;
-    buffer << fin.rdbuf();
-    fin.close();
+    if constexpr (dim == 2){
+      //only print grids with not too many elements
+      int gridsize = grid->size(0);
+      if (gridsize > 1000){
+        auto bundle = nlohmann::json::object();
+        bundle["text/plain"] = "Grid is to large for visualization.";
+        return bundle;
+      }
 
-    // Return a JSON object for Jupyter
+      // Write out the PNG file using Dune functionality
+      int argc;
+      char** argv;
+      const auto& helper = Dune::MPIHelper::instance(argc, argv);
+      Dune::printGrid(*grid, helper, "gridexercise");
+
+      // Read it back into a string buffer
+      std::ifstream fin("gridexercise_0.png", std::ios::binary);
+      std::stringstream buffer;
+      buffer << fin.rdbuf();
+      fin.close();
+
+      // Return a JSON object for Jupyter
+      auto bundle = nlohmann::json::object();
+      bundle["image/png"] = xtl::base64encode(buffer.str());
+      return bundle;
+    }
+
     auto bundle = nlohmann::json::object();
-    bundle["image/png"] = xtl::base64encode(buffer.str());
+    bundle["text/plain"] = "Visualization is only available for 2D grids.";
     return bundle;
   }
-
 }
 
 #endif // DUNE_JUPYTER_KERNEL_PRINTGRID_HH
