@@ -1,0 +1,13 @@
+name: dune-jupyter
+channels:
+  - conda-forge
+dependencies:
+  - cmake
+  - cxxopts
+  - fortran-compiler
+  - gcc_linux-64
+  - gnuplot
+  - make
+  - suitesparse
+  - superlu
+  - xeus-cling

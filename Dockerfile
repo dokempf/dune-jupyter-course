@@ -16,21 +16,12 @@ RUN apt update && \
 RUN mkdir -p /opt/dune && chown -R ${NB_USER} /opt/dune
 USER ${NB_USER}
 
-# Install conda and its dependencies
-RUN conda install -c conda-forge \
-        cmake \
-        cxxopts \
-        fortran-compiler \
-        gcc_linux-64 \
-        gnuplot \
-        make \
-        suitesparse \
-        superlu \
-        xeus-cling && \
-    conda clean -a -q -y
-
 # Copying the repository into the Docker container
 COPY --chown=${NB_UID} . /opt/dune
+
+# Install Conda environment
+RUN conda env update -n base --file /opt/dune/environment.yml && \
+    conda clean -a -q -y
 
 # Build the Dune kernel
 WORKDIR /opt/dune
