@@ -51,6 +51,30 @@ namespace Dune {
     return bundle;
   }
 
+  template<typename GV>
+  nlohmann::json mime_bundle_repr(Dune::VTKSequenceWriter<GV>& vtkwriter)
+  {
+    //read name from temporary file
+    std::string outputname;
+    std::ifstream myfile("name.txt");
+    if (myfile.is_open())
+    {
+      std::getline(myfile,outputname);
+      myfile.close();
+    }
+    else
+      outputname = "output";
+
+    //use system commands to zip folder
+    std::string cmd = "zip -r " + outputname + ".zip " + outputname;
+    std::system(cmd.c_str());
+
+    auto bundle = nlohmann::json::object();
+    std::string bundletxt = "VTK Output has been written to folder. You can <a href=\""+ outputname+ ".zip\"> download it </a> and the <a href=\""+ outputname + ".pvd\"> corresponding file</a> .";
+    bundle["text/html"] = bundletxt;
+    return bundle;
+  }
+
 } // namespace Dune
 
 #endif
