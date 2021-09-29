@@ -12,7 +12,7 @@ namespace Dune::Geo {
     const Dune::GeometryType& geotype = refelem.type();
 
     //get the matching filename for the geometry type
-    std::string filename = "../dune/dune-geometry/doc/appl/refelements/";
+    std::string filename = "../../dune/dune-geometry/doc/appl/refelements/";
     if(geotype.isLine())
       filename += "gg_line.svg";
     else if(geotype.isTriangle())
